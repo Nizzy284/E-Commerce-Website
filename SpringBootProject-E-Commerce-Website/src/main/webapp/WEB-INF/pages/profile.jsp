@@ -39,7 +39,7 @@
 						</div>
 						<div class="col-md-8">
 							Hello, <br>
-							<h5>${user.name}</h5>
+							<h5><c:out value="${user.name}"/></h5>
 						</div>
 					</div>
 				</div>
