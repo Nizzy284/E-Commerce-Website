@@ -100,11 +100,11 @@
 							<a href="viewProduct?pid=${prod.id}"
 								style="text-decoration: none; color: inherit;">
 								<div>
-									<h5 class="card-title text-center">${prod.name}</h5>
+									<h5 class="card-title text-center"><c:out value="${prod.name}"/></h5>
 									<div class="container text-center">
-										<span class="real-price">&#8377;${prod.priceAfterDiscount}</span>&ensp;
-										<span class="product-price">&#8377;${prod.price}</span>&ensp;
-										<span class="product-discount">${prod.discount}&#37;off</span>
+										<span class="real-price">&#8377;<c:out value="${prod.priceAfterDiscount}"/></span>&ensp;
+										<span class="product-price">&#8377;<c:out value="${prod.price}"/></span>&ensp;
+										<span class="product-discount"><c:out value="${prod.discount}"/>&#37;off</span>
 									</div>
 								</div>
 							</a>
