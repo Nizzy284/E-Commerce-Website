@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import jakarta.servlet.http.HttpSession;
 
 @Configuration
@@ -56,7 +56,9 @@ public class WebSecurityConfig {
                         // Allow unrestricted access to all other endpoints
                         .anyRequest().permitAll();
                 })
-                .csrf(csrf -> csrf.disable())  // Disable CSRF protection
+                .csrf(csrf -> csrf
+    				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+				)  // Enable CSRF protection
                 .formLogin(login -> {
                     login
                         .loginPage("/login")
